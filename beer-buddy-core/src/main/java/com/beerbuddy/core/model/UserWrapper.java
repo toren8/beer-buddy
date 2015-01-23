@@ -2,8 +2,6 @@ package com.beerbuddy.core.model;
 
 import java.util.Date;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class UserWrapper implements User {
 
 	protected User user;
@@ -17,7 +15,8 @@ public class UserWrapper implements User {
 		}
 	}
 
-    @JsonProperty("lastLoginInMillis")
+	//todo: move to dto
+    //@JsonProperty("lastLoginInMillis")
     public long getLastLoginInMillis() {
     	if( user.getLastLogin() != null ) {
     		return user.getLastLogin().getTime();
